@@ -57,6 +57,27 @@
             font-weight: 400;
         }
 
+        /* --- NOUVELLE NAVIGATION --- */
+        .nav-top {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--dark-blue);
+            border-bottom: 1px solid var(--dark-blue);
+        }
+
         .subtitle {
             font-family: 'Cinzel', serif;
             font-size: 0.85rem;
@@ -111,27 +132,30 @@
             border-radius: 2px;
         }
 
+        /* --- GRILLE 2x2 --- */
         .services-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+            gap: 30px;
             margin-bottom: 100px;
-            justify-content: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Style commun pour toutes les colonnes */
         .service-column {
-            flex: 1 1 200px; /* Ajusté pour tenir à 4 */
-            max-width: 250px;
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 25px;
             border: 1px solid transparent;
             transition: all 0.4s;
             background: #fff;
             box-shadow: 0 5px 15px rgba(0,0,0,0.02);
             text-decoration: none; 
             color: inherit;         
-            display: block;        
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .service-column:hover {
@@ -140,38 +164,31 @@
         }
 
         .service-icon {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--dark-blue);
             margin-bottom: 15px;
-            display: block;
         }
 
         .service-title {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin-bottom: 15px;
             border-bottom: 1px solid var(--gold);
             display: inline-block;
             padding-bottom: 5px;
         }
 
-        /* Style spécifique pour les liens internes à la 4e rubrique */
         .book-link {
             color: var(--gold);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             display: block;
-            margin-top: 5px;
+            margin-top: 8px;
             transition: color 0.3s;
         }
-        .book-link:hover {
-            color: var(--dark-blue);
-            text-decoration: underline;
-        }
+        .book-link:hover { color: var(--dark-blue); }
 
-        .portfolio-section {
-            margin-bottom: 80px;
-        }
+        .portfolio-section { margin-bottom: 80px; }
 
         .portfolio-item {
             display: flex;
@@ -194,9 +211,7 @@
             font-weight: 600;
         }
 
-        .project-info {
-            flex-grow: 1;
-        }
+        .project-info { flex-grow: 1; }
 
         .project-title {
             font-size: 1.3rem;
@@ -223,8 +238,6 @@
             margin-bottom: -60px;
         }
 
-        .footer-section h2 { color: white; }
-
         .btn-gold {
             display: inline-block;
             margin-top: 25px;
@@ -243,14 +256,14 @@
             color: var(--dark-blue);
         }
 
+        /* --- MOBILE --- */
         @media (max-width: 768px) {
-            .frame { padding: 30px 20px; margin: 0; }
+            .services-container { grid-template-columns: 1fr; } /* Une colonne sur mobile */
+            .frame { padding: 30px 20px; }
             h1 { font-size: 2.5rem; }
             .portfolio-item { flex-direction: column; }
             .year { margin-bottom: 5px; }
-            body { padding: 0; }
-            .footer-section { margin-left: -20px; margin-right: -20px; margin-bottom: -30px; }
-            .services-container { gap: 10px; }
+            .footer-section { margin-left: -20px; margin-right: -20px; }
         }
     </style>
 </head>
@@ -260,6 +273,10 @@
         <div class="corner-decoration top-left"></div>
         <div class="corner-decoration bottom-right"></div>
         
+        <div class="nav-top">
+            <a href="photos.html" class="nav-link">Galerie Photos 📷</a>
+        </div>
+
         <header>
             <span class="subtitle">Arts • Patrimoine • Lettres</span>
             <h1>THOMAS OZKOK</h1>
@@ -277,25 +294,24 @@
             <a href="archives.html" class="service-column">
                 <span class="service-icon">❧</span>
                 <h3 class="service-title">Archives</h3>
-                <p>Inventaire, classement et numérisation de fonds d'architectes et d'artistes.</p>
+                <p>Inventaire et classement de fonds d'architectes et d'artistes.</p>
             </a>
 
             <a href="biographie.html" class="service-column">
                 <span class="service-icon">✎</span>
                 <h3 class="service-title">Biographie</h3>
-                <p>Rédaction de mémoires, biographies et pages Wikipédia biographiques.</p>
+                <p>Rédaction de mémoires et pages Wikipédia biographiques.</p>
             </a>
 
             <a href="patrimoine.html" class="service-column">
                 <span class="service-icon">🏛</span>
                 <h3 class="service-title">Patrimoine</h3>
-                <p>Conseil en gestion de collections et stratégie digitale pour galeries.</p>
+                <p>Gestion de collections et stratégie digitale pour galeries.</p>
             </a>
 
             <div class="service-column">
                 <span class="service-icon">📚</span>
                 <h3 class="service-title">Publications</h3>
-                <p style="margin-bottom: 10px;">Retrouvez mes ouvrages disponibles aux Éditions Unicité :</p>
                 <a href="https://www.editions-unicite.fr/auteurs/JASMIN-E-Thomas/nervures-considerations/index.php" target="_blank" class="book-link">→ Nervures / Considérations</a>
                 <a href="https://www.editions-unicite.fr/auteurs/JASMIN-E-Thomas/meliant/index.php" target="_blank" class="book-link">→ Méliant</a>
             </div>
@@ -316,7 +332,7 @@
                 <div class="year">2023-2026</div>
                 <div class="project-info">
                     <div class="project-title">Atelier Kitty Holley (Paris / Venise)</div>
-                    <div class="project-desc">Archiviste & Coordination. Gestion du fonds d'atelier, numérisation et commissariat d'expositions.</div>
+                    <div class="project-desc">Gestion du fonds d'atelier et commissariat d'expositions.</div>
                 </div>
             </div>
 
@@ -324,34 +340,17 @@
                 <div class="year">2021-2026</div>
                 <div class="project-info">
                     <div class="project-title">Éditions Unicité / Encyclopédie</div>
-                    <div class="project-desc">Auteur publié (<i>Méliant</i>) et rédaction de pages Wikipédia (Kitty Holley, Francine Holley, Michel Holley).</div>
-                </div>
-            </div>
-
-            <div class="portfolio-item">
-                <div class="year">2023 / 2025</div>
-                <div class="project-info">
-                    <div class="project-title">Musée d'Art et d'Histoire de Cholet / ENS Ulm</div>
-                    <div class="project-desc">Régie technique et installation de l'exposition "Clusters".</div>
+                    <div class="project-desc">Auteur publié et rédaction de pages Wikipédia (Kitty, Francine et Michel Holley).</div>
                 </div>
             </div>
         </div>
 
         <div class="footer-section">
             <h2 style="font-size: 1.5rem;">Votre histoire mérite l'excellence.</h2>
-            <p style="opacity: 0.8;">Disponible pour missions consultatives à Paris et Île-de-France.</p>
-            
             <a href="mailto:thomasozkok@gmail.com" class="btn-gold">Prendre Rendez-vous</a>
-            
-            <p style="margin-top: 30px; font-size: 0.9rem; color: var(--gold);">
-                thomasozkok@gmail.com &nbsp;|&nbsp; 07 69 82 13 17
-            </p>
-            <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 40px;">
-                &copy; 2026 Thomas Ozkok - Saint-Denis
-            </p>
+            <p style="margin-top: 30px; font-size: 0.9rem; color: var(--gold);">thomasozkok@gmail.com &nbsp;|&nbsp; 07 69 82 13 17</p>
+            <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 40px;">&copy; 2026 Thomas Ozkok</p>
         </div>
-
     </div>
-
 </body>
 </html>
