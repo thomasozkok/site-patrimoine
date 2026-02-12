@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expertise Archives | Thomas Ozkok</title>
+    
+    <!-- Polices de prestige -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-body: #f0efeb;
+            --bg-card: #fcfbf9;
+            --dark-blue: #0f172a;
+            --gold: #bfa15f;
+            --text-grey: #4a4a4a;
+            --border-light: #e0ddd5;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-grey);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* --- CADRE GALERIE --- */
+        .frame {
+            border: 1px solid var(--gold);
+            padding: 60px;
+            background: var(--bg-card);
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--dark-blue);
+        }
+        .top-left { top: 15px; left: 15px; border-right: none; border-bottom: none; }
+        .bottom-right { bottom: 15px; right: 15px; border-left: none; border-top: none; }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--dark-blue);
+            font-weight: 400;
+        }
+
+        /* --- NAVIGATION --- */
+        .nav-back {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .nav-back a {
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .nav-back a:hover {
+            border-bottom: 1px solid var(--dark-blue);
+            color: var(--dark-blue);
+        }
+
+        header { text-align: center; margin-bottom: 60px; }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* --- MÉTHODOLOGIE --- */
+        .methodology-section {
+            margin-bottom: 80px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .step-item:last-child { border-bottom: none; }
+
+        .step-number {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            line-height: 1;
+            opacity: 0.5;
+            min-width: 60px;
+        }
+
+        .step-content h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        /* --- ÉTUDES DE CAS --- */
+        .case-studies {
+            background-color: #fff;
+            padding: 40px;
+            border: 1px solid var(--border-light);
+            margin-bottom: 60px;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 5px 10px;
+            background: var(--bg-body);
+            color: var(--dark-blue);
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            padding: 15px 35px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold);
+            color: var(--dark-blue);
+        }
+
+        @media (max-width: 768px) {
+            .step-item { flex-direction: column; gap: 10px; }
+            .frame { padding: 30px 20px; }
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="frame">
+        <!-- Décorations d'angles -->
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+
+        <!-- Retour accueil -->
+        <div class="nav-back">
+            <a href="index.html">← Retour à l'accueil</a>
+        </div>
+
+        <header>
+            <span class="subtitle">Méthodologie & Rigueur</span>
+            <h1>GESTION D'ARCHIVES</h1>
+        </header>
+
+        <!-- SECTION MÉTHODO -->
+        <div class="methodology-section">
+            <div class="step-item">
+                <div class="step-number">I</div>
+                <div class="step-content">
+                    <h3>Audit & Diagnostic</h3>
+                    <p>Chaque mission débute par une évaluation physique du fonds. J'identifie la nature des documents (papier, calques d'architectes, photographies, correspondance), leur état de conservation et le volume à traiter. Cette étape permet de définir une stratégie de tri rigoureuse.</p>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">II</div>
+                <div class="step-content">
+                    <h3>Classement & Inventaire</h3>
+                    <p>Je structure le fonds selon un plan de classement logique respectant les normes archivistiques. Chaque dossier est décrit, coté et conditionné dans des matériaux de conservation préventive (boîtes neutres, pochettes Mylar) pour stopper toute dégradation.</p>
+                </div>
+            </div>
+
+            <div class="step-item">
+                <div class="step-number">III</div>
+                <div class="step-content">
+                    <h3>Valorisation & Numérisation</h3>
+                    <p>Une archive classée doit être exploitable. Je produis un instrument de recherche (catalogue numérique) et sélectionne les pièces iconiques pour une numérisation haute définition, idéale pour des publications ou des expositions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ÉTUDES DE CAS -->
+        <div class="case-studies">
+            <h2 style="text-align: center; margin-bottom: 30px; font-size: 1.8rem;">Études de Cas</h2>
+            
+            <div style="margin-bottom: 30px;">
+                <h3 style="margin-bottom: 5px;">Fonds d'Atelier • Kitty Holley</h3>
+                <div style="margin-bottom: 10px;">
+                    <span class="tag">Peinture</span> <span class="tag">Correspondance</span> <span class="tag">Numérisation</span>
+                </div>
+                <p>Organisation intégrale des archives de l'artiste. Numérisation de l'œuvre graphique pour la préparation de catalogues raisonnés et d'expositions internationales à Venise.</p>
+            </div>
+
+            <div style="margin-bottom: 30px; border-top: 1px solid var(--border-light); padding-top: 20px;">
+                <h3 style="margin-bottom: 5px;">Archives d'Architectes • Paris</h3>
+                <div style="margin-bottom: 10px;">
+                    <span class="tag">Plans</span> <span class="tag">Calques</span> <span class="tag">Maquettes</span>
+                </div>
+                <p>Traitement des fonds Gérard Legoff et Michel Holley. Gestion de documents techniques grand format et conservation préventive spécifique aux supports fragiles.</p>
+            </div>
+        </div>
+
+        <!-- CTA FINAL -->
+        <div style="text-align: center; margin-top: 50px;">
+            <p style="font-style: italic; margin-bottom: 30px;">"Une archive bien traitée est une mémoire sauvée."</p>
+            <a href="mailto:thomasozkok@gmail.com" class="btn-gold">Demander un diagnostic</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

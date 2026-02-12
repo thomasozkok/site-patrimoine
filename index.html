@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Ozkok | Archiviste & Auteur</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-body: #f0efeb;       
+            --bg-card: #fcfbf9;       
+            --dark-blue: #0f172a;     
+            --gold: #bfa15f;          
+            --text-grey: #4a4a4a;     
+            --border-light: #e0ddd5;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-grey);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .frame {
+            border: 1px solid var(--gold);
+            padding: 60px;
+            background: var(--bg-card);
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--dark-blue);
+            transition: all 0.5s ease;
+        }
+        .top-left { top: 15px; left: 15px; border-right: none; border-bottom: none; }
+        .bottom-right { bottom: 15px; right: 15px; border-left: none; border-top: none; }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--dark-blue);
+            font-weight: 400;
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-size: 3.8rem;
+            margin: 0;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+
+        .role {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+            color: #666;
+        }
+
+        .intro-section {
+            text-align: justify;
+            font-size: 1.05rem;
+            margin-bottom: 80px;
+            padding: 0 20px;
+        }
+
+        .drop-cap {
+            float: left;
+            font-family: 'Cinzel', serif;
+            font-size: 4.5rem;
+            line-height: 0.85;
+            padding: 15px 15px 8px 15px;
+            margin-right: 20px;
+            margin-top: 8px;
+            background-color: var(--dark-blue);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            border-radius: 2px;
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 100px;
+            justify-content: space-between;
+        }
+
+        /* AJUSTEMENT : On s'assure que le lien englobe tout proprement */
+        .service-column {
+            flex: 1 1 250px;
+            text-align: center;
+            padding: 30px 20px;
+            border: 1px solid transparent;
+            transition: all 0.4s;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            text-decoration: none; /* Supprime le soulignement du lien */
+            color: inherit;         /* Garde la couleur du texte originale */
+            display: block;        /* Permet au lien de se comporter comme un bloc */
+        }
+
+        .service-column:hover {
+            border: 1px solid var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 1.8rem;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .portfolio-section {
+            margin-bottom: 80px;
+        }
+
+        .portfolio-item {
+            display: flex;
+            align-items: baseline;
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border-light);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateX(10px);
+            border-bottom-color: var(--gold);
+        }
+
+        .year {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            width: 100px;
+            flex-shrink: 0;
+            font-weight: 600;
+        }
+
+        .project-info {
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--dark-blue);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .footer-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px;
+            border-top: 1px solid var(--gold);
+            background-color: var(--dark-blue);
+            color: white;
+            margin-left: -60px;
+            margin-right: -60px;
+            margin-bottom: -60px;
+        }
+
+        .footer-section h2 { color: white; }
+
+        .btn-gold {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 35px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold);
+            color: var(--dark-blue);
+        }
+
+        @media (max-width: 768px) {
+            .frame { padding: 30px 20px; margin: 0; }
+            h1 { font-size: 2.5rem; }
+            .portfolio-item { flex-direction: column; }
+            .year { margin-bottom: 5px; }
+            body { padding: 0; }
+            .footer-section { margin-left: -20px; margin-right: -20px; margin-bottom: -30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="frame">
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+        
+        <header>
+            <span class="subtitle">Arts • Patrimoine • Lettres</span>
+            <h1>THOMAS OZKOK</h1>
+            <p class="role">Archiviste Expert & Auteur</p>
+        </header>
+
+        <div class="intro-section">
+            <p>
+                <span class="drop-cap">D</span>iplômé de l'Université Paris I Panthéon-Sorbonne en Histoire et Histoire de l'art, et auteur publié, je conjugue la rigueur de l'archiviste à la sensibilité de la plume. 
+                Spécialisé dans le secteur culturel et artistique, j'accompagne institutions, familles et collectionneurs dans la préservation et la mise en valeur de leur patrimoine.
+                Je transforme vos archives et vos récits en actifs pérennes.
+            </p>
+        </div>
+
+        <div class="services-container">
+            <a href="archives.html" class="service-column">
+                <span class="service-icon">❧</span>
+                <h3 class="service-title">Archives</h3>
+                <p>Inventaire, classement et numérisation de fonds d'architectes et d'artistes. Conservation préventive et valorisation historique.</p>
+            </a>
+
+            <a href="biographie.html" class="service-column">
+                <span class="service-icon">✎</span>
+                <h3 class="service-title">Biographie</h3>
+                <p>Rédaction de mémoires ("Ghostwriting"), catalogues d'exposition et ouvrages littéraires. Une approche sensible de votre histoire.</p>
+            </a>
+
+            <a href="patrimoine.html" class="service-column">
+                <span class="service-icon">🏛</span>
+                <h3 class="service-title">Patrimoine</h3>
+                <p>Conseil en gestion de collections, régie d'œuvres et accompagnement digital pour antiquaires et galeries.</p>
+            </a>
+        </div>
+
+        <div class="portfolio-section">
+            <h2 style="text-align: center; margin-bottom: 40px;">Parcours Choisi</h2>
+
+            <div class="portfolio-item">
+                <div class="year">2020-2026</div>
+                <div class="project-info">
+                    <div class="project-title">Atelier Kitty Holley (Paris / Venise)</div>
+                    <div class="project-desc">Archiviste & Coordination. Gestion du fonds d'atelier, numérisation et commissariat d'expositions (Giudecca Art Space, Living Art Gallery).</div>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="year">2023 / 2025</div>
+                <div class="project-info">
+                    <div class="project-title">Musée d'Art et d'Histoire de Cholet / ENS Ulm</div>
+                    <div class="project-desc">Régie technique et installation de l'exposition "Clusters".</div>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="year">2021-2026</div>
+                <div class="project-info">
+                    <div class="project-title">Éditions Unicité</div>
+                    <div class="project-desc">Auteur publié (<i>Vis plus vite</i>, <i>Méliant</i>). Correcteur de manuscrits et suivi éditorial.</div>
+                </div>
+            </div>
+
+            <div class="portfolio-item">
+                <div class="year">2021</div>
+                <div class="project-info">
+                    <div class="project-title">Archives d'Architectes (Paris)</div>
+                    <div class="project-desc">Classement et valorisation des fonds Gérard Legoff et Michel Holley.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h2 style="font-size: 1.5rem;">Votre histoire mérite l'excellence.</h2>
+            <p style="opacity: 0.8;">Disponible pour missions consultatives à Paris et Île-de-France.</p>
+            
+            <a href="mailto:thomasozkok@gmail.com" class="btn-gold">Prendre Rendez-vous</a>
+            
+            <p style="margin-top: 30px; font-size: 0.9rem; color: var(--gold);">
+                thomasozkok@gmail.com &nbsp;|&nbsp; 07 69 82 13 17
+            </p>
+            <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 40px;">
+                &copy; 2026 Thomas Ozkok - Saint-Denis
+            </p>
+        </div>
+    </div>
+</body>
+</html>

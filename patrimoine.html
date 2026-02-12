@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseil Patrimoine | Thomas Ozkok</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- STYLE GLOBAL (Identique) --- */
+        :root {
+            --bg-body: #f0efeb;
+            --bg-card: #fcfbf9;
+            --dark-blue: #0f172a;
+            --gold: #bfa15f;
+            --text-grey: #4a4a4a;
+            --border-light: #e0ddd5;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-grey);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .frame {
+            border: 1px solid var(--gold);
+            padding: 60px;
+            background: var(--bg-card);
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 1px solid var(--dark-blue);
+            transition: all 0.5s ease;
+        }
+        .top-left { top: 15px; left: 15px; border-right: none; border-bottom: none; }
+        .bottom-right { bottom: 15px; right: 15px; border-left: none; border-top: none; }
+
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--dark-blue);
+            font-weight: 400;
+        }
+
+        /* --- NAVIGATION --- */
+        .nav-back {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .nav-back a {
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            border-bottom: 1px solid transparent;
+            transition: border 0.3s;
+        }
+
+        .nav-back a:hover {
+            border-bottom: 1px solid var(--dark-blue);
+            color: var(--dark-blue);
+        }
+
+        header { text-align: center; margin-bottom: 60px; }
+        
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            color: var(--gold);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        /* --- CONTENU SPÉCIFIQUE PATRIMOINE --- */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border: 1px solid var(--border-light);
+            text-align: center;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .experience-list {
+            margin-bottom: 60px;
+        }
+
+        .exp-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            border-left: 2px solid var(--gold);
+            padding-left: 20px;
+        }
+
+        .exp-date {
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            min-width: 100px;
+            font-weight: 600;
+        }
+
+        .exp-content h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        .exp-place {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            padding: 15px 35px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold);
+            color: var(--dark-blue);
+        }
+
+        @media (max-width: 768px) {
+            .exp-item { flex-direction: column; gap: 5px; }
+            .frame { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="frame">
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+
+        <div class="nav-back">
+            <a href="index.html">← Retour à l'accueil</a>
+        </div>
+
+        <header>
+            <span class="subtitle">Conseil & Valorisation</span>
+            <h1>PATRIMOINE & RÉGIE</h1>
+        </header>
+
+        <div style="text-align: center; font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--dark-blue); margin-bottom: 60px; padding: 0 20px;">
+            "De la logistique muséale à la stratégie digitale, je valorise vos collections."
+        </div>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <span class="service-icon">🏛</span>
+                <h3>Régie d'Œuvres</h3>
+                <!-- Suppression de "Transport" -->
+                <p>Coordination logistique pour musées et galeries. Constats d'état, accrochage et scénographie. Une expertise technique éprouvée sur des installations complexes.</p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">🌐</span>
+                <h3>Stratégie Digitale</h3>
+                <p>Accompagnement des antiquaires vers la vente en ligne. Photographie professionnelle, rédaction de fiches expertes (FR/EN/IT) et gestion de présence sur les plateformes (Artsy, Selency).</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🔍</span>
+                <h3>Gestion de Collection</h3>
+                <!-- Remplacement de "récolement" par "catalogage" -->
+                <p>Inventaire, catalogage et documentation de collections privées. Conseil en conservation préventive pour assurer la pérennité de vos acquisitions.</p>
+            </div>
+        </div>
+
+        <div class="experience-list">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 1.8rem;">Expérience Terrain</h2>
+
+            <!-- Nouvelle expérience Vernaison ajoutée en premier -->
+            <div class="exp-item">
+                <div class="exp-date">2025</div>
+                <div class="exp-content">
+                    <h3>Gestion de Galerie d'Antiquités</h3>
+                    <span class="exp-place">Puces de Saint-Ouen, Marché Vernaison</span>
+                    <p>Direction d'un espace de vente dédié aux objets anciens. Expertise, relation client internationale et mise en valeur des collections.</p>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-date">2023 / 2025</div>
+                <div class="exp-content">
+                    <h3>Régie & Installation "Clusters"</h3>
+                    <span class="exp-place">Musée d'Art et d'Histoire de Cholet & ENS Ulm</span>
+                    <p>Gestion technique complète : montage, éclairage et sécurisation des œuvres pour cette installation muséale d'envergure.</p>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-date">2022 / 2023</div>
+                <div class="exp-content">
+                    <h3>Commissariat d'Exposition</h3>
+                    <span class="exp-place">Giudecca Art Space & Living Art Gallery, Venise</span>
+                    <p>Coordination internationale. Sélection des œuvres, scénographie et organisation du vernissage en Italie.</p>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-date">2025</div>
+                <div class="exp-content">
+                    <h3>Montage "L'expo des 150"</h3>
+                    <span class="exp-place">Studio La Cage aux Fauves & Cabaret du Chat Noir, Paris</span>
+                    <!-- Reformulation "manipulation" pour faire plus pro -->
+                    <p>Régie d'exposition historique. Installation technique, sécurisation des œuvres et mise en lumière.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <p style="font-style: italic; margin-bottom: 30px;">"Votre collection mérite une visibilité experte."</p>
+            <a href="mailto:thomasozkok@gmail.com" class="btn-gold">Discuter de votre projet</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
