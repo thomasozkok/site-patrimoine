@@ -4,285 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plume & Biographie | Thomas Ozkok</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    
     <style>
-        /* --- STYLE GLOBAL (Identique) --- */
-        :root {
-            --bg-body: #f0efeb;
-            --bg-card: #fcfbf9;
-            --dark-blue: #0f172a;
-            --gold: #bfa15f;
-            --text-grey: #4a4a4a;
-            --border-light: #e0ddd5;
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            background-color: var(--bg-body);
-            color: var(--text-grey);
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            line-height: 1.8;
-            font-weight: 300;
-        }
-
-        .frame {
-            border: 1px solid var(--gold);
-            padding: 60px;
-            background: var(--bg-card);
-            max-width: 900px;
-            margin: 0 auto;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
-            position: relative;
-        }
-
-        .corner-decoration {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            border: 1px solid var(--dark-blue);
-            transition: all 0.5s ease;
-        }
+        :root { --bg-body: #f0efeb; --bg-card: #fcfbf9; --dark-blue: #0f172a; --gold: #bfa15f; --text-grey: #4a4a4a; --border-light: #e0ddd5; }
+        body { background-color: var(--bg-body); color: var(--text-grey); font-family: 'Montserrat', sans-serif; margin: 0; padding: 40px 20px; line-height: 1.8; font-weight: 300; }
+        .frame { border: 1px solid var(--gold); padding: 60px; background: var(--bg-card); max-width: 900px; margin: 0 auto; box-shadow: 0 30px 60px rgba(0,0,0,0.08); position: relative; }
+        .corner-decoration { position: absolute; width: 30px; height: 30px; border: 1px solid var(--dark-blue); }
         .top-left { top: 15px; left: 15px; border-right: none; border-bottom: none; }
         .bottom-right { bottom: 15px; right: 15px; border-left: none; border-top: none; }
-
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--dark-blue);
-            font-weight: 400;
-        }
-
-        /* --- NAVIGATION --- */
-        .nav-back {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .nav-back a {
-            text-decoration: none;
-            color: var(--gold);
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            border-bottom: 1px solid transparent;
-            transition: border 0.3s;
-        }
-
-        .nav-back a:hover {
-            border-bottom: 1px solid var(--dark-blue);
-            color: var(--dark-blue);
-        }
-
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--dark-blue); font-weight: 400; }
+        .nav-back { text-align: center; margin-bottom: 40px; }
+        .nav-back a { text-decoration: none; color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 2px; border-bottom: 1px solid transparent; transition: border 0.3s; }
+        .nav-back a:hover { border-bottom: 1px solid var(--dark-blue); color: var(--dark-blue); }
         header { text-align: center; margin-bottom: 60px; }
-        
-        h1 {
-            font-size: 3rem;
-            margin: 0;
-            line-height: 1.1;
-        }
-
-        .subtitle {
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            letter-spacing: 4px;
-            color: var(--gold);
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        /* --- CONTENU SPÉCIFIQUE BIOGRAPHIE --- */
-        .quote-section {
-            text-align: center;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-style: italic;
-            color: var(--dark-blue);
-            margin-bottom: 60px;
-            padding: 0 40px;
-        }
-
-        .service-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
-        }
-
-        .service-item {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .service-icon {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .publications-list {
-            background-color: #fff;
-            padding: 40px;
-            border: 1px solid var(--border-light);
-            margin-bottom: 60px;
-        }
-
-        .book-item {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-
+        h1 { font-size: 3rem; margin: 0; line-height: 1.1; }
+        .subtitle { font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; display: block; margin-bottom: 15px; }
+        .quote-section { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic; color: var(--dark-blue); margin-bottom: 60px; padding: 0 40px; }
+        /* Grille de services ajustée pour 4 items */
+        .service-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 80px; }
+        .service-item { text-align: center; padding: 20px; border: 1px solid transparent; transition: 0.3s; }
+        .service-item:hover { border: 1px solid var(--border-light); background: #fff; }
+        .service-icon { font-size: 2rem; color: var(--gold); margin-bottom: 15px; display: block; }
+        .publications-list { background-color: #fff; padding: 40px; border: 1px solid var(--border-light); margin-bottom: 60px; }
+        .book-item { margin-bottom: 25px; padding-bottom: 25px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: baseline; }
         .book-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
-        .book-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--dark-blue);
-        }
-
-        .book-details {
-            font-size: 0.9rem;
-            color: #666;
-            font-style: italic;
-        }
-
-        .award {
-            display: inline-block;
-            margin-top: 5px;
-            font-size: 0.8rem;
-            color: var(--gold);
-            font-family: 'Cinzel', serif;
-            border: 1px solid var(--gold);
-            padding: 2px 8px;
-        }
-
-        .btn-gold {
-            display: inline-block;
-            padding: 15px 35px;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            transition: all 0.3s;
-        }
-
-        .btn-gold:hover {
-            background-color: var(--gold);
-            color: var(--dark-blue);
-        }
-
-        @media (max-width: 768px) {
-            .book-item { flex-direction: column; gap: 5px; }
-            .frame { padding: 30px 20px; }
-        }
+        .book-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--dark-blue); }
+        .book-details { font-size: 0.9rem; color: #666; font-style: italic; }
+        .award { display: inline-block; margin-top: 5px; font-size: 0.8rem; color: var(--gold); font-family: 'Cinzel', serif; border: 1px solid var(--gold); padding: 2px 8px; }
+        .btn-gold { display: inline-block; padding: 15px 35px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; transition: all 0.3s; }
+        .btn-gold:hover { background-color: var(--gold); color: var(--dark-blue); }
+        @media (max-width: 768px) { .book-item { flex-direction: column; gap: 5px; } .frame { padding: 30px 20px; } }
     </style>
 </head>
 <body>
-
     <div class="frame">
         <div class="corner-decoration top-left"></div>
         <div class="corner-decoration bottom-right"></div>
-
-        <div class="nav-back">
-            <a href="index.html">← Retour à l'accueil</a>
-        </div>
+        <div class="nav-back"><a href="index.html">← Retour à l'accueil</a></div>
 
         <header>
             <span class="subtitle">Ghostwriting & Édition</span>
             <h1>BIOGRAPHIE & PLUME</h1>
         </header>
 
-        <div class="quote-section">
-            "Je prête ma plume pour que votre histoire devienne un héritage."
-        </div>
+        <div class="quote-section">"Je prête ma plume pour que votre histoire devienne un héritage."</div>
 
         <div class="service-list">
             <div class="service-item">
                 <span class="service-icon">✒</span>
-                <h3>Biographie Familiale</h3>
-                <p>Entretiens, transcription et écriture littéraire de récits de vie. Un livre unique, imprimé et relié, pour transmettre la mémoire d'une génération à l'autre.</p>
+                <h3>Biographie</h3>
+                <p>Entretiens et écriture de récits de vie pour les particuliers.</p>
             </div>
-            
             <div class="service-item">
                 <span class="service-icon">✦</span>
-                <h3>Mémoires d'Entreprise</h3>
-                <p>Retracer l'histoire d'une société, ses fondateurs et ses valeurs. Un outil de communication prestige pour vos partenaires et collaborateurs.</p>
+                <h3>Entreprise</h3>
+                <p>Retracer l'histoire d'une société et de ses fondateurs.</p>
             </div>
-
+            <div class="service-item">
+                <span class="service-icon">🌐</span>
+                <h3>Wikipédia</h3>
+                <p>Rédaction et modération de notices biographiques encyclopédiques.</p>
+            </div>
             <div class="service-item">
                 <span class="service-icon">¶</span>
-                <h3>Conseil Éditorial</h3>
-                <p>Correction, restructuration et suivi de manuscrits. Accompagnement jusqu'à la publication.</p>
+                <h3>Édition</h3>
+                <p>Correction et accompagnement jusqu'à la publication.</p>
             </div>
         </div>
 
         <div class="publications-list">
-            <h2 style="text-align: center; margin-bottom: 30px; font-size: 1.8rem;">Bibliographie Personnelle</h2>
-            
+            <h2 style="text-align: center; margin-bottom: 30px; font-size: 1.8rem;">Bibliographie & Travaux</h2>
             <div class="book-item">
-                <div>
-                    <span class="book-title">Vis plus vite</span>
-                    <br><span class="book-details">Éditions Unicité, 2026</span>
-                </div>
+                <div><span class="book-title">Vis plus vite</span><br><span class="book-details">Éditions Unicité, 2026</span></div>
             </div>
-
             <div class="book-item">
-                <div>
-                    <span class="book-title">Méliant</span>
-                    <br><span class="book-details">Éditions Unicité, 2024</span>
-                </div>
-            </div>
-
-            <div class="book-item">
-                <div>
-                    <span class="book-title">Nervures / Considérations</span>
-                    <br><span class="book-details">Éditions Unicité, 2021</span>
-                    <br><span class="award">Prix de l'Académie Royale des Jeux Floraux</span>
-                </div>
-            </div>
-
-            <div class="book-item">
-                <div>
-                    <span class="book-title">Comme un point qui s'élance (Correction)</span>
-                    <br><span class="book-details">Joëlle Thienard, Charlotte Escamez, Kitty Holley • Éditions Unicité, 2024</span>
-                </div>
-            </div>
-
-            <div class="book-item">
-                <div>
-                    <span class="book-title">Père absent, mère KO (Correction)</span>
-                    <br><span class="book-details">Marie-Ange Gacherieu Bouzinhac de Lacaze, Éditions Unicité, 2022</span>
-                </div>
-            </div>
-
-            <div class="book-item">
-                <div>
-                    <span class="book-title">Contre-Jour (Correction)</span>
-                    <br><span class="book-details">Kitty Holley, Éditions Unicité, 2022</span>
-                </div>
+                <div><span class="book-title">Rédaction de notices Wikipédia</span><br><span class="book-details">Michel Holley, Francine Holley, Kitty Holley</span></div>
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 50px;">
-            <p style="font-style: italic; margin-bottom: 30px;">"Écrire, c'est sauver de l'oubli."</p>
-            <a href="mailto:thomasozkok@gmail.com" class="btn-gold">Parlons de votre livre</a>
+            <a href="mailto:thomasozkok@gmail.com" class="btn-gold">Parlons de votre projet</a>
         </div>
-
     </div>
-
 </body>
 </html>
