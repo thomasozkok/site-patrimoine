@@ -11,11 +11,11 @@
     
     <style>
         :root {
-            --bg-body: #f0efeb;       /* Fond extérieur */
-            --bg-card: #fcfbf9;       /* Blanc cassé très chaud (Papier d'Art) */
-            --dark-blue: #0f172a;     /* Bleu Nuit Profond (Encre) */
-            --gold: #bfa15f;          /* Or Vieilli (Cadres) */
-            --text-grey: #4a4a4a;     /* Gris Anthracite (Texte) */
+            --bg-body: #f0efeb;
+            --bg-card: #fcfbf9;
+            --dark-blue: #0f172a;
+            --gold: #bfa15f;
+            --text-grey: #4a4a4a;
             --border-light: #e0ddd5;
         }
 
@@ -31,18 +31,16 @@
             font-weight: 300;
         }
 
-        /* --- LE CADRE "GALERIE" --- */
         .frame {
             border: 1px solid var(--gold);
             padding: 60px;
             background: var(--bg-card);
             max-width: 900px;
             margin: 0 auto;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.08); /* Ombre portée douce */
+            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
             position: relative;
         }
 
-        /* Décorations d'angles (Le détail chic) */
         .corner-decoration {
             position: absolute;
             width: 30px;
@@ -53,30 +51,15 @@
         .top-left { top: 15px; left: 15px; border-right: none; border-bottom: none; }
         .bottom-right { bottom: 15px; right: 15px; border-left: none; border-top: none; }
 
-        /* --- TYPOGRAPHIE --- */
         h1, h2, h3 {
             font-family: 'Cormorant Garamond', serif;
             color: var(--dark-blue);
             font-weight: 400;
         }
 
-        .subtitle {
-            font-family: 'Cinzel', serif; /* Police Romaine */
-            font-size: 0.85rem;
-            letter-spacing: 4px;
-            color: var(--gold);
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--gold);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        /* --- EN-TÊTE --- */
         header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 50px;
         }
 
         h1 {
@@ -88,51 +71,74 @@
 
         .role {
             font-size: 1.1rem;
-            margin-top: 20px;
+            margin-top: 15px;
             font-style: italic;
             font-family: 'Cormorant Garamond', serif;
             color: #666;
         }
 
-        /* --- INTRO AVEC LETTRINE SOBRE --- */
+        /* --- BOUTON GALERIE VISIBLE --- */
+        .gallery-btn-container {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-link {
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            padding: 12px 25px;
+            border: 1px solid var(--gold);
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .gallery-link:hover {
+            background-color: var(--gold);
+            color: var(--dark-blue);
+        }
+
         .intro-section {
-            text-align: justify; /* Justifié comme un livre */
+            text-align: justify;
             font-size: 1.05rem;
             margin-bottom: 80px;
             padding: 0 20px;
         }
 
+        /* --- LETTRINE SOBRE ET ÉLÉGANTE (Cormorant) --- */
         .drop-cap {
             float: left;
-            font-family: 'Cinzel', serif;
-            font-size: 4.5rem;
-            line-height: 0.85;
-            padding: 15px 15px 8px 15px; /* Ajustement pour centrer la lettre */
-            margin-right: 20px;
-            margin-top: 8px;
-            background-color: var(--dark-blue); /* Fond Bleu Nuit sobre */
-            color: var(--gold);                 /* Lettre Or */
-            border: 1px solid var(--gold);
-            border-radius: 2px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.8rem;
+            line-height: 0.7;
+            padding-top: 10px;
+            margin-right: 12px;
+            color: var(--dark-blue);
         }
 
-        /* --- SERVICES (Grille) --- */
+        /* --- GRILLE 2x2 --- */
         .services-container {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             margin-bottom: 100px;
-            justify-content: space-between;
         }
 
         .service-column {
-            flex: 1 1 250px; /* Responsive */
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 30px;
             border: 1px solid transparent;
             transition: all 0.4s;
             background: #fff;
             box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            text-decoration: none; 
+            color: inherit;         
+            display: flex;
+            flex-direction: column;
+            justify-content: start; /* Alignement haut pour cohérence */
+            align-items: center;
         }
 
         .service-column:hover {
@@ -141,10 +147,9 @@
         }
 
         .service-icon {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--dark-blue);
-            margin-bottom: 15px;
-            display: block;
+            margin-bottom: 20px;
         }
 
         .service-title {
@@ -155,10 +160,24 @@
             padding-bottom: 5px;
         }
 
-        /* --- PORTFOLIO (Liste élégante) --- */
-        .portfolio-section {
-            margin-bottom: 80px;
+        /* Texte des rubriques plus développé */
+        .service-column p {
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
+
+        .book-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: block;
+            margin-top: 10px;
+            transition: color 0.3s;
+        }
+        .book-link:hover { color: var(--dark-blue); }
+
+        .portfolio-section { margin-bottom: 80px; }
 
         .portfolio-item {
             display: flex;
@@ -168,10 +187,7 @@
             transition: transform 0.3s;
         }
 
-        .portfolio-item:hover {
-            transform: translateX(10px); /* Petit mouvement au survol */
-            border-bottom-color: var(--gold);
-        }
+        .portfolio-item:hover { transform: translateX(10px); border-bottom-color: var(--gold); }
 
         .year {
             font-family: 'Cinzel', serif;
@@ -179,10 +195,6 @@
             width: 100px;
             flex-shrink: 0;
             font-weight: 600;
-        }
-
-        .project-info {
-            flex-grow: 1;
         }
 
         .project-title {
@@ -198,45 +210,16 @@
             margin-top: 5px;
         }
 
-        /* --- STYLE POUR LES PHOTOS DANS LE PORTFOLIO (NOUVEAU) --- */
-        .image-container {
-            margin-top: 15px;
-            margin-bottom: 10px;
-        }
-
-        .archive-photo {
-            max-width: 100%;      /* S'adapte sur mobile */
-            width: 350px;         /* Largeur idéale sur ordinateur */
-            height: auto;         /* Garde les proportions */
-            border: 1px solid var(--border-light); /* Bordure fine grise */
-            padding: 5px;         /* Espace blanc façon "cadre photo" */
-            background: #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Ombre douce */
-            transition: transform 0.3s ease;
-            display: block;
-        }
-
-        .archive-photo:hover {
-            transform: scale(1.02); /* Zoom très léger au survol */
-            border-color: var(--gold); /* Le cadre devient doré au survol */
-        }
-
-        /* --- CONTACT / FOOTER --- */
         .footer-section {
             text-align: center;
             margin-top: 80px;
-            padding-top: 60px;
+            padding: 60px;
             border-top: 1px solid var(--gold);
             background-color: var(--dark-blue);
             color: white;
-            padding: 60px;
-            margin-left: -60px; /* Pour sortir du padding du cadre */
+            margin-left: -60px;
             margin-right: -60px;
             margin-bottom: -60px;
-        }
-
-        .footer-section h2 {
-            color: white;
         }
 
         .btn-gold {
@@ -252,22 +235,15 @@
             transition: all 0.3s;
         }
 
-        .btn-gold:hover {
-            background-color: var(--gold);
-            color: var(--dark-blue);
-        }
+        .btn-gold:hover { background-color: var(--gold); color: var(--dark-blue); }
 
-        /* --- MOBILE OPTIMIZATION --- */
         @media (max-width: 768px) {
-            .frame { padding: 30px 20px; margin: 0; }
+            .services-container { grid-template-columns: 1fr; }
+            .frame { padding: 30px 20px; }
             h1 { font-size: 2.5rem; }
             .portfolio-item { flex-direction: column; }
             .year { margin-bottom: 5px; }
-            body { padding: 0; }
-            .footer-section { margin-left: -20px; margin-right: -20px; margin-bottom: -30px; }
-            
-            /* Ajustement image mobile */
-            .archive-photo { width: 100%; }
+            .footer-section { margin-left: -20px; margin-right: -20px; }
         }
     </style>
 </head>
@@ -278,34 +254,46 @@
         <div class="corner-decoration bottom-right"></div>
         
         <header>
-            <span class="subtitle">Arts • Patrimoine • Lettres</span>
             <h1>THOMAS OZKOK</h1>
             <p class="role">Archiviste Expert & Auteur</p>
         </header>
+
+        <div class="gallery-btn-container">
+            <a href="photos.html" class="gallery-link">Voir la Galerie Photos 📷</a>
+        </div>
 
         <div class="intro-section">
             <p>
                 <span class="drop-cap">D</span>iplômé de l'Université Paris I Panthéon-Sorbonne en Histoire et Histoire de l'art, et auteur publié, je conjugue la rigueur de l'archiviste à la sensibilité de la plume. 
                 Spécialisé dans le secteur culturel et artistique, j'accompagne institutions, familles et collectionneurs dans la préservation et la mise en valeur de leur patrimoine.
-                Je transforme vos archives et vos récits en actifs pérennes.
             </p>
         </div>
 
         <div class="services-container">
-            <div class="service-column">
+            <a href="archives.html" class="service-column">
                 <span class="service-icon">❧</span>
                 <h3 class="service-title">Archives</h3>
                 <p>Inventaire, classement et numérisation de fonds d'architectes et d'artistes. Conservation préventive et valorisation historique.</p>
-            </div>
-            <div class="service-column">
+            </a>
+
+            <a href="biographie.html" class="service-column">
                 <span class="service-icon">✎</span>
                 <h3 class="service-title">Biographie</h3>
-                <p>Rédaction de mémoires ("Ghostwriting"), catalogues d'exposition et ouvrages littéraires. Une approche sensible de votre histoire.</p>
-            </div>
-            <div class="service-column">
+                <p>Rédaction de mémoires, biographies et pages Wikipédia. Une approche littéraire pour pérenniser votre histoire personnelle ou institutionnelle.</p>
+            </a>
+
+            <a href="patrimoine.html" class="service-column">
                 <span class="service-icon">🏛</span>
                 <h3 class="service-title">Patrimoine</h3>
-                <p>Conseil en gestion de collections, régie d'œuvres et accompagnement digital pour antiquaires et galeries.</p>
+                <p>Conseil en gestion de collections, régie d'œuvres et stratégie digitale pour antiquaires et galeries d'art.</p>
+            </a>
+
+            <div class="service-column">
+                <span class="service-icon">📚</span>
+                <h3 class="service-title">Publications</h3>
+                <p style="margin-bottom: 10px;">Retrouvez mes ouvrages disponibles aux Éditions Unicité :</p>
+                <a href="https://www.editions-unicite.fr/auteurs/JASMIN-E-Thomas/nervures-considerations/index.php" target="_blank" class="book-link">→ Nervures / Considérations</a>
+                <a href="https://www.editions-unicite.fr/auteurs/JASMIN-E-Thomas/meliant/index.php" target="_blank" class="book-link">→ Méliant</a>
             </div>
         </div>
 
@@ -315,57 +303,42 @@
             <div class="portfolio-item">
                 <div class="year">2020-2026</div>
                 <div class="project-info">
-                    <div class="project-title">Atelier Kitty Holley (Paris / Venise)</div>
-                    <div class="project-desc">
-                        Archiviste & Coordination. Gestion du fonds d'atelier, numérisation et commissariat d'expositions (Giudecca Art Space, Living Art Gallery).
-                        
-                        <div class="image-container">
-                            <img src="1770930127614.jpg" alt="Vue de l'Atelier Kitty Holley" class="archive-photo">
-                        </div>
-                    </div>
+                    <div class="project-title">Fonds Francine Holley (Paris)</div>
+                    <div class="project-desc">Classement intégral et numérisation du fonds d'atelier de l'artiste.</div>
                 </div>
             </div>
 
             <div class="portfolio-item">
-                <div class="year">2023 / 2025</div>
+                <div class="year">2023-2026</div>
                 <div class="project-info">
-                    <div class="project-title">Musée d'Art et d'Histoire de Cholet / ENS Ulm</div>
-                    <div class="project-desc">Régie technique et installation de l'exposition "Clusters".</div>
+                    <div class="project-title">Atelier Kitty Holley (Paris / Venise)</div>
+                    <div class="project-desc">Gestion du fonds d'atelier et commissariat d'expositions.</div>
                 </div>
             </div>
 
             <div class="portfolio-item">
                 <div class="year">2021-2026</div>
                 <div class="project-info">
-                    <div class="project-title">Éditions Unicité</div>
-                    <div class="project-desc">Auteur publié (<i>Vis plus vite</i>, <i>Méliant</i>). Correcteur de manuscrits et suivi éditorial.</div>
+                    <div class="project-title">Éditions Unicité / Encyclopédie</div>
+                    <div class="project-desc">Auteur publié et rédaction de pages Wikipédia (Kitty, Francine et Michel Holley).</div>
                 </div>
             </div>
-
-            <div class="portfolio-item">
-                <div class="year">2021</div>
+            
+             <div class="portfolio-item">
+                <div class="year">2023 / 2025</div>
                 <div class="project-info">
-                    <div class="project-title">Archives d'Architectes (Paris)</div>
-                    <div class="project-desc">Classement et valorisation des fonds Gérard Legoff et Michel Holley.</div>
+                    <div class="project-title">Musée d'Art et d'Histoire de Cholet / ENS Ulm</div>
+                    <div class="project-desc">Régie technique et installation de l'exposition "Clusters".</div>
                 </div>
             </div>
         </div>
 
         <div class="footer-section">
             <h2 style="font-size: 1.5rem;">Votre histoire mérite l'excellence.</h2>
-            <p style="opacity: 0.8;">Disponible pour missions consultatives à Paris et Île-de-France.</p>
-            
             <a href="mailto:thomasozkok@gmail.com" class="btn-gold">Prendre Rendez-vous</a>
-            
-            <p style="margin-top: 30px; font-size: 0.9rem; color: var(--gold);">
-                thomasozkok@gmail.com &nbsp;|&nbsp; 07 69 82 13 17
-            </p>
-            <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 40px;">
-                &copy; 2026 Thomas Ozkok - Saint-Denis
-            </p>
+            <p style="margin-top: 30px; font-size: 0.9rem; color: var(--gold);">thomasozkok@gmail.com &nbsp;|&nbsp; 07 69 82 13 17</p>
+            <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 40px;">&copy; 2026 Thomas Ozkok</p>
         </div>
-
     </div>
-
 </body>
 </html>
