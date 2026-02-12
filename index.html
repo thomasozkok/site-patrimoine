@@ -57,43 +57,9 @@
             font-weight: 400;
         }
 
-        /* --- NOUVELLE NAVIGATION --- */
-        .nav-top {
-            text-align: right;
-            margin-bottom: 20px;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--gold);
-            font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s;
-        }
-
-        .nav-link:hover {
-            color: var(--dark-blue);
-            border-bottom: 1px solid var(--dark-blue);
-        }
-
-        .subtitle {
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            letter-spacing: 4px;
-            color: var(--gold);
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--gold);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
         header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         h1 {
@@ -105,10 +71,32 @@
 
         .role {
             font-size: 1.1rem;
-            margin-top: 20px;
+            margin-top: 15px;
             font-style: italic;
             font-family: 'Cormorant Garamond', serif;
             color: #666;
+        }
+
+        /* --- GALERIE PHOTOS PLUS VISIBLE --- */
+        .gallery-btn-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gallery-link {
+            text-decoration: none;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            padding: 10px 20px;
+            border: 1px solid var(--gold);
+            transition: all 0.3s;
+        }
+
+        .gallery-link:hover {
+            background-color: var(--gold);
+            color: white;
         }
 
         .intro-section {
@@ -118,29 +106,23 @@
             padding: 0 20px;
         }
 
+        /* --- LETTRINE SOBRE ET ÉLÉGANTE --- */
         .drop-cap {
             float: left;
-            font-family: 'Cinzel', serif;
-            font-size: 4.5rem;
-            line-height: 0.85;
-            padding: 15px 15px 8px 15px;
-            margin-right: 20px;
-            margin-top: 8px;
-            background-color: var(--dark-blue);
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            border-radius: 2px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.8rem;
+            line-height: 0.7;
+            padding-top: 10px;
+            margin-right: 12px;
+            color: var(--dark-blue);
         }
 
         /* --- GRILLE 2x2 --- */
         .services-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             margin-bottom: 100px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .service-column {
@@ -184,7 +166,6 @@
             font-size: 0.85rem;
             display: block;
             margin-top: 8px;
-            transition: color 0.3s;
         }
         .book-link:hover { color: var(--dark-blue); }
 
@@ -198,10 +179,7 @@
             transition: transform 0.3s;
         }
 
-        .portfolio-item:hover {
-            transform: translateX(10px);
-            border-bottom-color: var(--gold);
-        }
+        .portfolio-item:hover { transform: translateX(10px); border-bottom-color: var(--gold); }
 
         .year {
             font-family: 'Cinzel', serif;
@@ -211,19 +189,11 @@
             font-weight: 600;
         }
 
-        .project-info { flex-grow: 1; }
-
         .project-title {
             font-size: 1.3rem;
             color: var(--dark-blue);
             font-family: 'Cormorant Garamond', serif;
             font-weight: 600;
-        }
-
-        .project-desc {
-            font-size: 0.95rem;
-            color: #777;
-            margin-top: 5px;
         }
 
         .footer-section {
@@ -251,14 +221,10 @@
             transition: all 0.3s;
         }
 
-        .btn-gold:hover {
-            background-color: var(--gold);
-            color: var(--dark-blue);
-        }
+        .btn-gold:hover { background-color: var(--gold); color: var(--dark-blue); }
 
-        /* --- MOBILE --- */
         @media (max-width: 768px) {
-            .services-container { grid-template-columns: 1fr; } /* Une colonne sur mobile */
+            .services-container { grid-template-columns: 1fr; }
             .frame { padding: 30px 20px; }
             h1 { font-size: 2.5rem; }
             .portfolio-item { flex-direction: column; }
@@ -273,15 +239,14 @@
         <div class="corner-decoration top-left"></div>
         <div class="corner-decoration bottom-right"></div>
         
-        <div class="nav-top">
-            <a href="photos.html" class="nav-link">Galerie Photos 📷</a>
-        </div>
-
         <header>
-            <span class="subtitle">Arts • Patrimoine • Lettres</span>
             <h1>THOMAS OZKOK</h1>
             <p class="role">Archiviste Expert & Auteur</p>
         </header>
+
+        <div class="gallery-btn-container">
+            <a href="photos.html" class="gallery-link">Voir la Galerie Photos</a>
+        </div>
 
         <div class="intro-section">
             <p>
