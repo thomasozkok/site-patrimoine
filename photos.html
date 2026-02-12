@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie Photos | Thomas Ozkok</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Cormorant+Garamond:wght@400&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-body: #f0efeb; --bg-card: #fcfbf9; --dark-blue: #0f172a; --gold: #bfa15f; }
+        body { background-color: var(--bg-body); font-family: 'Montserrat', sans-serif; padding: 40px 20px; }
+        .frame { border: 1px solid var(--gold); padding: 40px; background: var(--bg-card); max-width: 900px; margin: 0 auto; position: relative; }
+        .nav-back { text-align: center; margin-bottom: 30px; }
+        .nav-back a { text-decoration: none; color: var(--gold); font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 2px; }
+        header { text-align: center; margin-bottom: 50px; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--dark-blue); }
+        
+        /* GRILLE PHOTOS */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .photo-item {
+            background: #eee;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .photo-item img:hover { transform: scale(1.05); }
+
+        .placeholder-text { font-style: italic; color: #999; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <div class="nav-back"><a href="index.html">← Retour à l'accueil</a></div>
+        <header><h1>GALERIE PHOTOS</h1></header>
+
+        <div class="photo-grid">
+            <div class="photo-item"><span class="placeholder-text">Votre photo 1 ici</span></div>
+            <div class="photo-item"><span class="placeholder-text">Votre photo 2 ici</span></div>
+            <div class="photo-item"><span class="placeholder-text">Votre photo 3 ici</span></div>
+        </div>
+    </div>
+</body>
+</html>
